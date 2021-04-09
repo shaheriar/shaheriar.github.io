@@ -95,20 +95,26 @@
       {
         "title":"Wireless power control for PC",
         "category":"",
-        "image":"REMOTE.jpg",
-        "url":""
+        "image":"remote.jpg",
+        "url":"https://github.com/shaheriar/IR-Remote-PC-Power"
       },
       {
         "title":"Facial Recognition using OpenCV",
         "category":"",
         "image":"eye.jpg",
-        "url":""
+        "url":"https://github.com/shaheriar/FacialDetection"
       },
       {
         "title":"Virtual Assistant Discord Bot",
         "category":"",
         "image":"discord.jpg",
-        "url":""
+        "url":"https://github.com/shaheriar/BotJarvisDiscord"
+      },
+      {
+        "title":"Self Driving Car",
+        "category":"",
+        "image":"car.jpg",
+        "url":"https://github.com/shaheriar/SelfDrivingCar"
       }
     ]
   }

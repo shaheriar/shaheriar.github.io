@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/portf/static/css/main.bab0b925.chunk.css",
-    "main.js": "/portf/static/js/main.e04ced83.chunk.js",
-    "main.js.map": "/portf/static/js/main.e04ced83.chunk.js.map",
-    "runtime-main.js": "/portf/static/js/runtime-main.76226982.js",
-    "runtime-main.js.map": "/portf/static/js/runtime-main.76226982.js.map",
-    "static/js/2.228ec4b9.chunk.js": "/portf/static/js/2.228ec4b9.chunk.js",
-    "static/js/2.228ec4b9.chunk.js.map": "/portf/static/js/2.228ec4b9.chunk.js.map",
-    "index.html": "/portf/index.html",
-    "static/css/main.bab0b925.chunk.css.map": "/portf/static/css/main.bab0b925.chunk.css.map",
-    "static/js/2.228ec4b9.chunk.js.LICENSE.txt": "/portf/static/js/2.228ec4b9.chunk.js.LICENSE.txt"
+    "main.css": "/shaheriar.github.io/static/css/main.bab0b925.chunk.css",
+    "main.js": "/shaheriar.github.io/static/js/main.3affa595.chunk.js",
+    "main.js.map": "/shaheriar.github.io/static/js/main.3affa595.chunk.js.map",
+    "runtime-main.js": "/shaheriar.github.io/static/js/runtime-main.7da89df8.js",
+    "runtime-main.js.map": "/shaheriar.github.io/static/js/runtime-main.7da89df8.js.map",
+    "static/js/2.228ec4b9.chunk.js": "/shaheriar.github.io/static/js/2.228ec4b9.chunk.js",
+    "static/js/2.228ec4b9.chunk.js.map": "/shaheriar.github.io/static/js/2.228ec4b9.chunk.js.map",
+    "index.html": "/shaheriar.github.io/index.html",
+    "static/css/main.bab0b925.chunk.css.map": "/shaheriar.github.io/static/css/main.bab0b925.chunk.css.map",
+    "static/js/2.228ec4b9.chunk.js.LICENSE.txt": "/shaheriar.github.io/static/js/2.228ec4b9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.76226982.js",
+    "static/js/runtime-main.7da89df8.js",
     "static/js/2.228ec4b9.chunk.js",
     "static/css/main.bab0b925.chunk.css",
-    "static/js/main.e04ced83.chunk.js"
+    "static/js/main.3affa595.chunk.js"
   ]
 }
