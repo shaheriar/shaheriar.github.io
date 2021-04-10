@@ -4,7 +4,7 @@
     "occupation":"Research Assistant and Computer Engineering Undergraduate at the University of California, Riverside",
     "description":"",
     "image":"profilepic.jpg",
-    "bio":"A creative and driven Computer Engineering student with a strong background in Artificial Intelligence, Full-stack Development, Data Structures and Algorithms, and Embedded systems, but also likes to spend time making art and producing music. Eager to work in a healthy team based environment that is equally as passionate and excited about building and creating new ways for people to connect with technology, and each other.",
+    "bio":"I am a creative and driven Computer Engineering student with a strong background in Artificial Intelligence, Full-stack Development, Data Structures and Algorithms, and Embedded systems, but also likes to spend time making art and producing music. Eager to work in a healthy team based environment that is equally as passionate and excited about building and creating new ways for people to connect with technology, and each other.",
     "contactmessage":"Contact Me",
     "email": "shaheriarm@gmail.com",
     "phone": "",
@@ -41,13 +41,13 @@
         "school":"University of California, Riverside",
         "degree":"Bachelors of Science in Computer Engineering",
         "graduated":"2019-2022",
-        "description":""
+        "description":"GPA: 3.69"
       },
       {
         "school":"Cerritos College",
-        "degree":"Associates in Arts in Engineering",
+        "degree":"Associates of Arts in Engineering",
         "graduated":"2016-2019",
-        "description":""
+        "description":"GPA: 3.52"
       }
     ],
     "work":[
