@@ -4,7 +4,7 @@
     "occupation":"Research Assistant and Computer Engineering Undergraduate at the University of California, Riverside",
     "description":"",
     "image":"profilepic.jpg",
-    "bio":"A creative and driven Computer Engineering student with a strong background in Artificial Intelligence, Full-stack Development, Data Structures and Algorithms, and Embedded systems, but also likes to spend time making art and producing music. Interested in Aerospace, Artificial Intelligence as well as Embedded Systems. Eager to work in a healthy team based environment that is equally as passionate and excited about building and creating new ways for people to connect with technology, and each other.",
+    "bio":"A creative and driven Computer Engineering student with a strong background in Artificial Intelligence, Full-stack Development, Data Structures and Algorithms, and Embedded systems, but also likes to spend time making art and producing music. Eager to work in a healthy team based environment that is equally as passionate and excited about building and creating new ways for people to connect with technology, and each other.",
     "contactmessage":"Contact Me",
     "email": "shaheriarm@gmail.com",
     "phone": "",
@@ -26,6 +26,11 @@
         "name":"linkedin",
         "url":"https://www.linkedin.com/in/shaheriar/",
         "className":"fa fa-linkedin"
+      },
+      {
+        "name":"email",
+        "url":"mailto:shaheriarm@gmail.com",
+        "className":"fa fa-envelope-o"
       }
     ]
   },
@@ -50,7 +55,7 @@
         "company":"Computational Imaging and Machine Intelligence Lab",
         "title":"Research Assistant",
         "years":"Feb 2021 - Present",
-        "description":"Researching on and utilizing different PPG/ECG biosensors to take cardiovascular measurements.\nWriting algorithms in the C programming language to automatically detect peaks in wave-forms.\nAssisting in conducting experiments to explore different measurement techniques."
+        "description":"Researching on and utilizing different PPG/ECG biosensors to take cardiovascular measurements. Writing algorithms in the C programming language to automatically detect peaks in wave-forms. Assisting in conducting experiments to explore different measurement techniques."
       },
       {
         "company":"MindTApp",
