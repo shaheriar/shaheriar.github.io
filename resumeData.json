@@ -41,7 +41,7 @@
         "school":"University of California, Riverside",
         "degree":"Bachelors of Science in Computer Engineering",
         "graduated":"2019-2022",
-        "description":"GPA: 3.69"
+        "description":"GPA: 3.7"
       },
       {
         "school":"Cerritos College",
@@ -54,7 +54,7 @@
       {
         "company":"Computational Imaging and Machine Intelligence Lab",
         "title":"Research Assistant",
-        "years":"Feb 2021 - Present",
+        "years":"Feb 2021 - Jun 2021",
         "description":"Researching on and utilizing different PPG/ECG biosensors to take cardiovascular measurements. Writing algorithms in the C programming language to automatically detect peaks in wave-forms. Assisting in conducting experiments to explore different measurement techniques."
       },
       {
@@ -75,7 +75,7 @@
       },
       {
         "name":"Python",
-        "level":"70%"
+        "level":"80%"
       },
       {
         "name":"MATLAB",
