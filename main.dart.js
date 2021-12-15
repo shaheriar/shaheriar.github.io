@@ -59904,7 +59904,7 @@ $0(){this.a.tj(0,3)},
 $S:0}
 A.CP.prototype={
 V(a,b){var s=null
-return new A.tP(new A.fZ(0,new A.lF(s),s),"Flutter Demo",A.agj(s,B.ns),!1,s)}}
+return new A.tP(new A.fZ(0,new A.lF(s),s),"Shaheriar Malik",A.agj(s,B.ns),!1,s)}}
 A.lF.prototype={
 aL(){return new A.Jg(B.k)}}
 A.Jg.prototype={
