@@ -8,7 +8,7 @@
             "Degree":"Bachelors of Science in Computer Engineering",
             "From":"Fall 2019",
             "To":"Winter 2022",
-            "GPA":"3.743"
+            "GPA":"3.73"
         },
         {
             "Name":"Cerritos College",
@@ -25,9 +25,9 @@
             "From":"Feb 2021",
             "To":"Jun 2021",
             "Description":[
-                "Researching on and utilizing different PPG/ECG biosensors to take cardiovascular measurements.",
-                "Writing algorithms in the C programming language to automatically detect peaks in wave-forms.",
-                "Assisting in conducting experiments to explore different measurement techniques."
+                "Investigating the utilization of different PPG/ECG biosensors to take cardiovascular measurements.",
+                "Analyzing the collected experimental medical data using Python and MATLAB.",
+                "Assisting in conducting experiments to explore different measurement techniques for optimization."
             ]
         },
         {
