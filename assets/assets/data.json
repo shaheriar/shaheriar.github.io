@@ -5,10 +5,17 @@
     "Education":[
         {
             "Name":"University of California, Riverside",
+            "Degree":"Masters of Science in Computer Engineering",
+            "From":"Fall 2022",
+            "To":"Present",
+            "GPA":""
+        },
+        {
+            "Name":"University of California, Riverside",
             "Degree":"Bachelors of Science in Computer Engineering",
             "From":"Fall 2019",
             "To":"Winter 2022",
-            "GPA":"3.73"
+            "GPA":"3.75"
         },
         {
             "Name":"Cerritos College",
