@@ -1,14 +1,14 @@
 {
     "Name": "Shaheriar Malik",
-    "Description": "A creative and driven Computer Engineering student with a strong background in Machine Learning and Artificial Intelligence, Embedded Systems, and Robotics, but also likes to spend time making art and producing music. Eager to work in a healthy team based environment that is equally as passionate and excited about building and creating new ways for people to connect with technology, and each other.",
+    "Description": "A creative and driven Computer Engineering graduate student with a strong background in Intelligent Transportation Systems, Deep Learning, Autonomous Embedded Systems, and Robotics, but also likes to spend time making art and music. Eager to work in a healthy team based environment that is equally as passionate and excited about building and creating new ways for people to connect with technology, and each other.",
     "Image": "https://avatars.githubusercontent.com/u/49822364?v=4",
     "Education":[
         {
             "Name":"University of California, Riverside",
             "Degree":"Masters of Science in Computer Engineering",
             "From":"Fall 2022",
-            "To":"Present",
-            "GPA":""
+            "To":"Spring 2023",
+            "GPA":"3.70"
         },
         {
             "Name":"University of California, Riverside",
@@ -26,6 +26,30 @@
         }
     ],
     "Experience":[
+        {
+            "Name":"CE-CERT",
+            "Title":"Research Scientist",
+            "From":"Mar 2023",
+            "To":"Jun 2023",
+            "Description":[
+                "Exploring the capabilities of the Cohda Wireless MK6 OBU for Vehicle-to-Anything communication.",
+                "Successfully establishing communication between two OBUs to exchange basic safety messages.",
+                "Developed the necessary software for communication with under 20 ms latency using C++."
+            ]
+        },
+        {
+            "Name":"UC Riverside",
+            "Title":"Teacher Assistant",
+            "From":"Jan 2023",
+            "To":"Jun 2023",
+            "Description":[
+                "Teaching Assistant (TA) for CS 010A - Introduction to Computer Science for Science, Mathematics, and Engineering I for Winter and Spring 2023.",
+                "Preparing and conducting weekly lab sessions for a class of 100 students to provide supplementary instruction and guide students in their lab assignments.",
+                "Holding office hours to assist students with coursework that includes the foundations of programming and an introduction to the C++ programming language.",
+                "Assisting the professor in logistical tasks such as proctoring examinations, grading, and answering student questions and concerns on the online class forum.",
+                "Received an average 92% evaluation rating from students."
+            ]
+        },
         {
             "Name":"Computational Imaging and Machine Intelligence Lab",
             "Title":"Research Assistant",
