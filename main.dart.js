@@ -56587,7 +56587,7 @@ return new A.rf(new A.fz(0,new A.kV(s),s),"Shaheriar Malik",A.abJ(s,B.na),!1,s)}
 A.kV.prototype={
 aK(){return new A.GA(B.k)}}
 A.GA.prototype={
-V(a,b){var s=this,r=null,q=t.w,p=A.a7q("Shaheriar Malik",A.cs(r,r,r,r,r,r,r,r,r,r,r,s.c.I(q).f.a.a<700?50:100,r,B.T,r,r,!0,r,r,r,r,r,r,r,r)),o=A.a7q("Computer Engineering Undergraduate",A.cs(r,r,r,r,r,r,r,r,r,r,r,s.c.I(q).f.a.a<700?15:30,r,r,r,r,!0,r,r,r,r,r,r,r,r)),n=t.p
+V(a,b){var s=this,r=null,q=t.w,p=A.a7q("Shaheriar Malik",A.cs(r,r,r,r,r,r,r,r,r,r,r,s.c.I(q).f.a.a<700?50:100,r,B.T,r,r,!0,r,r,r,r,r,r,r,r)),o=A.a7q("Computer Engineering Masters Graduate",A.cs(r,r,r,r,r,r,r,r,r,r,r,s.c.I(q).f.a.a<700?15:30,r,r,r,r,!0,r,r,r,r,r,r,r,r)),n=t.p
 return A.bk(r,A.y4(A.dV(A.b([A.dV(A.b([p,o,A.a7q("University of California, Riverside",A.cs(r,r,r,r,r,r,r,r,r,r,r,s.c.I(q).f.a.a<700?15:30,r,r,r,r,!0,r,r,r,r,r,r,r,r))],n),B.J,B.v),s.a0_()],n),B.J,B.v),r,r),r,r,r,r,r,r)},
 a0_(){var s=null
 return A.eV(A.b([A.Qt(A.aac("images/github.png"),new A.a1p(),s),A.Qt(A.aaa(B.wY),new A.a1q(),s),A.Qt(A.aac("images/linkedin.png"),new A.a1r(),s),A.Qt(A.aaa(B.x_),new A.a1s(),s)],t.p),B.J,B.aW,B.v)}}
