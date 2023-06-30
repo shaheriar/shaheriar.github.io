@@ -83,11 +83,19 @@
             },
             {    
                 "Name":"C",
-                "Proficiency":0.9
+                "Proficiency":0.95
             },
             {    
                 "Name":"Python",
                 "Proficiency":1
+            },
+            {
+                "Name":"MATLAB",
+                "Proficiency":0.7
+            },
+            {
+                "Name":"SQL",
+                "Proficiency":0.8
             },
             {    
                 "Name":"Java",
@@ -96,20 +104,40 @@
         ],
         "Technology":[
             {
+                "Name":"Linux",
+                "Proficiency":0.95
+            },
+            {
+                "Name":"Robot Operating System (ROS)",
+                "Proficiency":0.9
+            },
+            {
                 "Name":"Git",
-                "Proficiency":0.8
+                "Proficiency":0.95
             },
             {
                 "Name":"OpenCV",
-                "Proficiency":0.7
+                "Proficiency":0.95
+            },
+            {
+                "Name":"Keras",
+                "Proficiency":0.95
+            },
+            {
+                "Name":"PyTorch",
+                "Proficiency":1
+            },
+            {
+                "Name":"TensorFlow",
+                "Proficiency":0.95
+            },
+            {
+                "Name":"Scikit-Learn",
+                "Proficiency":1
             },
             {
                 "Name":"PSpice",
                 "Proficiency":0.8
-            },
-            {
-                "Name":"MATLAB",
-                "Proficiency":0.7
             },
             {
                 "Name":"Flutter",
