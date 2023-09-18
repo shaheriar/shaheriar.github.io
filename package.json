@@ -1,8 +1,8 @@
 {
-  "name": "simplefolio",
+  "name": "shaheriar.github.io",
   "version": "1.0.1",
   "private": "true",
-  "description": "A clean, beautiful and responsive portfolio template for Developers!",
+  "description": "Shaheriar Malik | Portfolio",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cobiwave/simplefolio"
+    "url": "git+https://github.com/shaheriar/shaheriar.github.io"
   },
   "keywords": [],
-  "author": "Jacobo Martinez",
+  "author": "Shaheriar Malik",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cobiwave/simplefolio/issues"
+    "url": "https://github.com/shaheriar/shaheriar.github.io/issues"
   },
-  "homepage": "https://github.com/cobiwave/simplefolio#readme",
+  "homepage": "https://shaheriar.github.io/",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.9.3",
     "parcel": "^2.9.3",
