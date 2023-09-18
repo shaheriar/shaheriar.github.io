@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/shaheriar/shaheriar.github.io/issues"
   },
-  "homepage": "https://shaheriar.github.io/",
+  "homepage": "https://shaheriar.github.io/src/index.html",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.9.3",
     "gh-pages": "^6.0.0",
