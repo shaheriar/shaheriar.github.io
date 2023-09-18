@@ -6,8 +6,8 @@
   "source": "src/index.html",
   "scripts": {
     "predeploy": "npm run build",
-    "start": "parcel serve src/index.html --open",
-    "build": "parcel build src/index.html --public-url ./"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/shaheriar/shaheriar.github.io/issues"
   },
-  "homepage": "https://shaheriar.github.io/src/index.html",
+  "homepage": "https://shaheriar.github.io",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.9.3",
     "gh-pages": "^6.0.0",
