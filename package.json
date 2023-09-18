@@ -5,6 +5,8 @@
   "description": "Shaheriar Malik | Portfolio",
   "source": "src/index.html",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "parcel",
     "build": "parcel build"
   },
@@ -21,6 +23,7 @@
   "homepage": "https://shaheriar.github.io/",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.9.3",
+    "gh-pages": "^6.0.0",
     "parcel": "^2.9.3",
     "prettier": "^2.8.1"
   },
