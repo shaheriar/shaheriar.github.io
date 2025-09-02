@@ -1,20 +1,20 @@
 {
   "name": "shaheriar.github.io",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "private": "true",
-  "description": "Shaheriar Malik | Portfolio",
-  "source": "src/index.html",
+  "description": "Shaheriar Malik | Modern React Portfolio",
+  "type": "module",
   "scripts": {
-    "start": "parcel ./src/index.html",
-    "build-dev": "parcel build ./src/index.html --no-optimize --public-url ./",
-    "build": "parcel build ./src/index.html --public-url ./",
-    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shaheriar/shaheriar.github.io"
   },
-  "keywords": [],
+  "keywords": ["portfolio", "react", "framer-motion", "tailwindcss", "frontend"],
   "author": "Shaheriar Malik",
   "license": "ISC",
   "bugs": {
@@ -22,17 +22,20 @@
   },
   "homepage": "https://shaheriar.github.io",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.9.3",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
     "gh-pages": "^6.0.0",
-    "parcel": "^2.9.3",
-    "prettier": "^2.8.1"
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "tailwindcss": "^3.3.6",
+    "vite": "^5.0.8"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.3",
-    "jquery": "^3.6.3",
-    "popper.js": "^1.16.1",
-    "push-dir": "^0.4.1",
-    "vanilla-tilt": "^1.8.0"
+    "framer-motion": "^10.16.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0"
   }
 }
