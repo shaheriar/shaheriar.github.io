@@ -2,13 +2,18 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaExternalLinkAlt, FaLock } from 'react-icons/fa'
 import { staggerContainer, staggerItem, hoverScale } from '../config/animations'
+import project1Image from '../assets/project1.png'
+import project2Image from '../assets/project2.png'
+import project3Image from '../assets/project3.png'
+import project4Image from '../assets/project4.png'
+import project5Image from '../assets/project5.png'
 
 const Projects = () => {
   const projects = [
     {
       title: "Enhancing Image Captioning with Deep Learning Models",
       description: "Collaborated with a team of 2 to develop a deep learning model combining an encoder Wide ResNet50 with a decoder LSTM with an attention layer to accomplish the complex task of image captioning.",
-      image: "/assets/project1.png",
+      image: project1Image,
       githubUrl: "https://github.com/shaheriar/CS-228-Deep-Learning-Project",
       technologies: ["Python", "PyTorch", "Deep Learning", "Computer Vision", "LSTM", "Attention Mechanism"],
       featured: true,
@@ -17,7 +22,7 @@ const Projects = () => {
     {
       title: "Blog Post Automation using RAG, OpenAI, Langchain, with MongoDB",
       description: "Built an AI-powered blog platform using OpenAI, LangChain, and FAISS embeddings to generate company-specific posts, fetch relevant images from Pexels, and serve them via MongoDB to the website frontend.",
-      image: "/assets/project4.png",
+      image: project4Image,
       technologies: ["Python", "RAG", "OpenAI", "Langchain", "MongoDB"],
       featured: true,
       isPrivate: true
@@ -25,7 +30,7 @@ const Projects = () => {
     {
       "title": "Peer-to-Peer Rental Marketplace",
       "description": "Developed a peer-to-peer rental platform using React, Flask, AWS, and MongoDB, integrated Stripe for secure payments, and built ETL pipelines to track rentals and transactions.",
-      "image": "/assets/project5.png",
+      "image": project5Image,
       "technologies": ["React", "Flask", "AWS", "MongoDB", "Stripe"],
       "featured": true,
       "isPrivate": true
@@ -33,7 +38,7 @@ const Projects = () => {
     {
       title: "Motion Planning & Trajectory Generation with Turtlebot3",
       description: "Developed the necessary software in ROS to plan a path for the Turtlebot3 using the A* algorithm to avoid obstacles and hit the ball in the goal, and generate a trajectory using a PID controller to follow the path.",
-      image: "/assets/project2.png",
+      image: project2Image,
       githubUrl: "https://github.com/shaheriar/Motion-Planning-Trajectory-Generation-with-Turtlebot3",
       technologies: ["ROS", "C++", "Python", "Robotics", "A* Algorithm", "PID Controller"],
       featured: true,
@@ -42,7 +47,7 @@ const Projects = () => {
     {
       title: "Smart Chessboard",
       description: "Led a team of 4 and designed the Flutter front-end and Python AI for the construction of a chessboard designed to enhance the playing experience using the on-board 192 LEDs and touch screen.",
-      image: "/assets/project3.png",
+      image: project3Image,
       githubUrl: "https://github.com/shaheriar/Senior-Design-Project-UCR",
       technologies: ["Flutter", "Python", "AI", "Hardware Integration", "LED Control", "Touch Interface"],
       featured: true,

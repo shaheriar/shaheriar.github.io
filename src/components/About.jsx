@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { staggerContainer, staggerItem, hoverScale } from '../config/animations'
+import profileImage from '../assets/profile.jpeg'
 
 const About = () => {
   const skills = [
@@ -82,7 +83,7 @@ const About = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl transform rotate-3"></div>
                 <img
-                  src="/assets/profile.jpeg"
+                  src={profileImage}
                   alt="Shaheriar Malik"
                   className="relative w-64 h-64 object-cover rounded-2xl shadow-2xl"
                 />
