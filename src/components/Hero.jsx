@@ -60,7 +60,7 @@ const Hero = () => {
     }
   }
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 w-full">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div animate={bg1} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -81,13 +81,14 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-6 whitespace-nowrap"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-6"
           >
             <TypewriterText
               text="Hi, my name is "
               startAfter={0}
               speed={100}
             />
+            <br className="sm:hidden" />
             <span className="gradient-text">
               <TypewriterText
                 text="Shaheriar Malik"

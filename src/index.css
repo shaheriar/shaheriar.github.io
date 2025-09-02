@@ -7,10 +7,18 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   body {
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
   }
 }
 
@@ -43,5 +51,10 @@
   
   .text-shadow-lg {
     text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .prevent-overflow {
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 }

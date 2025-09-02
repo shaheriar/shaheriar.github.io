@@ -13,7 +13,7 @@ function App() {
   return (
     <ThemeProvider>
       <MetaTags />
-      <div className="App min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <div className="App min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 overflow-x-hidden prevent-overflow">
         <Navigation />
         <Hero />
         <About />
