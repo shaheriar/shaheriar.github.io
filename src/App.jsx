@@ -7,10 +7,12 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import MetaTags from './components/MetaTags'
 
 function App() {
   return (
     <ThemeProvider>
+      <MetaTags />
       <div className="App min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Navigation />
         <Hero />
