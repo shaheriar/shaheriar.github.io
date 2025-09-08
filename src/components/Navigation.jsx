@@ -24,11 +24,34 @@ const Navigation = () => {
   ]
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    // Close mobile menu first
     setIsMobileMenuOpen(false)
+    
+    // Add a small delay to ensure menu closes before scrolling
+    setTimeout(() => {
+      const element = document.querySelector(href)
+      if (element) {
+        // Get the element's position and account for fixed header
+        const headerHeight = 64 // h-16 = 64px
+        const elementPosition = element.offsetTop - headerHeight
+        
+        // Ensure we don't scroll to negative position
+        const scrollPosition = Math.max(0, elementPosition)
+        
+        // Smooth scroll to the element
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        })
+        
+        // Fallback for older browsers or if smooth scroll fails
+        if (!window.scrollTo) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      } else {
+        console.warn(`Element not found: ${href}`)
+      }
+    }, 150) // Slightly longer delay for mobile menu animation
   }
 
   return (
@@ -62,7 +85,10 @@ const Navigation = () => {
                 transition={{ delay: index * 0.1 + 0.3 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection(item.href)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection(item.href)
+                }}
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium"
               >
                 {item.name}
@@ -123,7 +149,10 @@ const Navigation = () => {
                   x: isMobileMenuOpen ? 0 : -20
                 }}
                 transition={{ delay: index * 0.1 }}
-                onClick={() => scrollToSection(item.href)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection(item.href)
+                }}
                 className="block w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
               >
                 {item.name}
