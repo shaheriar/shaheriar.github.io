@@ -57,39 +57,13 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
-          {/* Mobile ProfileCard - Show First */}
-          <div className="lg:hidden flex justify-center items-center w-full order-1">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              whileHover={{ scale: 1.02 }}
-              className="relative max-w-sm"
-            >
-              <ProfileCard
-                avatarUrl={profileImage}
-                name="Shaheriar Malik"
-                title="Software Engineer"
-                handle="shaheriar"
-                status="Let's chat!"
-                contactText="Contact Me"
-                showUserInfo={true}
-                enableTilt={true}
-                enableMobileTilt={true}
-                mobileTiltSensitivity={3}
-                onContactClick={() => {
-                  const element = document.querySelector('#contact')
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' })
-                  }
-                }}
-                className="w-full left-0 right-0 mx-auto"
-              />
-            </motion.div>
+          {/* Mobile ProfileCard - Hidden on mobile, moved to About section */}
+          <div className="hidden">
+            {/* ProfileCard moved to About section for mobile */}
           </div>
 
-          {/* Left Side - Hero Text */}
-          <div className="text-center lg:text-left lg:col-span-6 order-2 lg:order-1">
+          {/* Hero Text - Full width on mobile, 60% on desktop */}
+          <div className="text-center lg:text-left lg:col-span-6 order-1">
           {/* Main Title */}
           <motion.h1
             initial={{ opacity: 0, y: 50 }}

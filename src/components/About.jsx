@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { staggerContainer, staggerItem, hoverScale } from '../config/animations'
 import SkillsMagicBento from './SkillsMagicBento'
+import ProfileCard from './ProfileCard'
+import profileImage from '../assets/transparent_profile.png'
 
 const About = () => {
   const skills = [
@@ -49,6 +51,40 @@ const About = () => {
           >
             About Me
           </motion.h2>
+
+          {/* Mobile ProfileCard - Show only on mobile */}
+          <motion.div 
+            variants={staggerItem}
+            className="lg:hidden flex justify-center items-center w-full mb-12"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative max-w-sm"
+            >
+              <ProfileCard
+                avatarUrl={profileImage}
+                name="Shaheriar Malik"
+                title="Software Engineer"
+                handle="shaheriar"
+                status="Let's chat!"
+                contactText="Contact Me"
+                showUserInfo={true}
+                enableTilt={true}
+                enableMobileTilt={true}
+                mobileTiltSensitivity={3}
+                onContactClick={() => {
+                  const element = document.querySelector('#contact')
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }}
+                className="w-full left-0 right-0 mx-auto"
+              />
+            </motion.div>
+          </motion.div>
 
           {/* About Content - Top Section */}
           <motion.div variants={staggerItem} className="text-center mb-16">
