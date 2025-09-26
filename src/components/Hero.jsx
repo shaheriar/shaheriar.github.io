@@ -141,9 +141,9 @@ const Hero = () => {
             className="mb-12"
           >
             <StarBorder
-              color="#ff9ffc"
-              speed="3s"
-              thickness={2}
+              color="#8400ff"
+              speed="2s"
+              thickness={5}
               style={{ pointerEvents: 'auto' }}
             >
               <motion.button
