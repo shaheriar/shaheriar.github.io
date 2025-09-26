@@ -123,3 +123,24 @@
     overflow-x: hidden;
   }
 }
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize animations for better performance */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* GPU acceleration for smooth animations */
+.card, .skill-icon-item, .particle {
+  will-change: transform;
+  transform: translateZ(0);
+}

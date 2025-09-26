@@ -5,34 +5,109 @@ import {
   FaReact, 
   FaPython, 
   FaAws, 
-  FaGitAlt
+  FaGitAlt,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaNodeJs,
+  FaDocker,
+  FaLinux,
+  FaGithub,
+  FaNpm,
+  FaBootstrap,
+  FaSass
 } from 'react-icons/fa';
 import { 
   SiPytorch,
-  SiFlutter
+  SiFlutter,
+  SiNextdotjs,
+  SiTypescript,
+  SiMongodb,
+  SiPostgresql,
+  SiRedis,
+  SiTensorflow,
+  SiKeras,
+  SiScikitlearn,
+  SiCplusplus,
+  SiC,
+  SiOpencv,
+  SiExpress,
+  SiDart,
+  SiKubernetes,
+  SiSonarqube,
+  SiJest,
+  SiCypress,
+  SiPostman
 } from 'react-icons/si';
+// Removed unused Lucide React imports
+import InfiniteScroll from './InfiniteScroll';
 
-const DEFAULT_PARTICLE_COUNT = 8;
+const DEFAULT_PARTICLE_COUNT = 4; // Reduced from 8 for better performance
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
 const DEFAULT_GLOW_COLOR = '132, 0, 255';
 const MOBILE_BREAKPOINT = 768;
 
-// Icon mapping for skill categories - using representative technology icons
+// Comprehensive icon mapping for all skills - Only using confirmed existing icons
 const skillIcons = {
-  "Programming Languages": FaPython, // Python as representative
-  "AI/ML Frameworks": SiPytorch, // PyTorch as representative
-  "Web Development": FaReact, // React as representative
-  "Mobile & Cross-Platform": SiFlutter, // Flutter as representative
-  "Cloud & Databases": FaAws, // AWS as representative
-  "Development Tools": FaGitAlt // Git as representative
+  // Programming Languages
+  "Python": FaPython,
+  "JavaScript": FaJs,
+  "TypeScript": SiTypescript,
+  "C++": SiCplusplus,
+  "C": SiC,
+  "HTML": FaHtml5,
+  "CSS": FaCss3Alt,
+  
+  // AI/ML Frameworks
+  "PyTorch": SiPytorch,
+  "TensorFlow": SiTensorflow,
+  "Scikit-Learn": SiScikitlearn,
+  "OpenCV": SiOpencv,
+  "Keras": SiKeras,
+  
+  // Web Development
+  "React": FaReact,
+  "NextJS": SiNextdotjs,
+  "Flask": FaPython, // Using Python icon for Flask
+  "Node.js": FaNodeJs,
+  "Express": SiExpress, // Using Node.js icon for Express
+  "REST APIs": FaGitAlt, // Using Git icon as placeholder for REST APIs
+  
+  // Mobile & Cross-Platform
+  "Flutter": SiFlutter,
+  "React Native": FaReact,
+  "Dart": SiDart, // Using Flutter icon for Dart
+  
+  // Cloud & Databases
+  "AWS": FaAws,
+  "MongoDB": SiMongodb,
+  "PostgreSQL": SiPostgresql,
+  "Redis": SiRedis,
+  "Docker": FaDocker,
+  "Kubernetes": SiKubernetes,
+  
+  // Development Tools
+  "Git": FaGitAlt,
+  "GitHub": FaGithub,
+  "SonarQube": SiSonarqube,
+  "Jest": SiJest,
+  "Cypress": SiCypress,
+  "Postman": SiPostman
 };
 
-// Fallback icon component in case any icon fails to load
-const FallbackIcon = () => (
-  <svg width="3em" height="3em" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-  </svg>
-);
+// Generate skill icons for InfiniteScroll - only include skills with actual icons
+const generateSkillIcons = (skillItems) => {
+  return skillItems
+    .filter(skill => skillIcons[skill]) // Only include skills that have actual icons
+    .map((skill, index) => ({
+      content: (
+        <div className="skill-icon-item">
+          {React.createElement(skillIcons[skill], { size: '2em' })}
+        </div>
+      )
+    }));
+};
+
 
 const createParticleElement = (x, y, color = DEFAULT_GLOW_COLOR) => {
   const el = document.createElement('div');
@@ -199,8 +274,16 @@ const ParticleCard = ({
       }
     };
 
+    // Throttle mouse move for better performance
+    let mouseMoveTimeout;
     const handleMouseMove = e => {
       if (!enableTilt && !enableMagnetism) return;
+      
+      // Throttle to 60fps max
+      if (mouseMoveTimeout) return;
+      mouseMoveTimeout = setTimeout(() => {
+        mouseMoveTimeout = null;
+      }, 16); // ~60fps
 
       const rect = element.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -215,7 +298,7 @@ const ParticleCard = ({
         gsap.to(element, {
           rotateX,
           rotateY,
-          duration: 0.1,
+          duration: 0.2, // Slightly longer for smoother animation
           ease: 'power2.out',
           transformPerspective: 1000
         });
@@ -228,7 +311,7 @@ const ParticleCard = ({
         magnetismAnimationRef.current = gsap.to(element, {
           x: magnetX,
           y: magnetY,
-          duration: 0.3,
+          duration: 0.4, // Slightly longer for smoother animation
           ease: 'power2.out'
         });
       }
@@ -462,6 +545,7 @@ const SkillsMagicBento = ({ skills, ...props }) => {
   const gridRef = useRef(null);
   const isMobile = useMobileDetection();
   const shouldDisableAnimations = props.disableAnimations || isMobile;
+  const [isVisible, setIsVisible] = useState(false);
 
   const defaultProps = {
     textAutoHide: false,
@@ -477,6 +561,26 @@ const SkillsMagicBento = ({ skills, ...props }) => {
     enableMagnetism: true,
     ...props
   };
+
+  // Intersection Observer to pause animations when not visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    return () => {
+      if (gridRef.current) {
+        observer.unobserve(gridRef.current);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -517,9 +621,21 @@ const SkillsMagicBento = ({ skills, ...props }) => {
                   <div className="card__label">{skill.category}</div>
                 </div>
                 <div className="card__content">
-                  <div className="card__background-icon">
-                    {React.createElement(skillIcons[skill.category] || FallbackIcon, { size: '3em' })}
-                  </div>
+                 <div className="card__background-icons">
+                        <InfiniteScroll
+                            items={generateSkillIcons(skill.items)}
+                            isTilted={true}
+                            tiltDirection='left'
+                            autoplay={isVisible} // Only animate when visible
+                            autoplaySpeed={0.5} // Slower for better performance
+                            autoplayDirection="down"
+                            pauseOnHover={true} // Pause on hover for better UX
+                            width="100%"
+                            maxHeight="100%"
+                            itemMinHeight={60}
+                        />
+                 </div>
+                  
                   <div className="skills-list">
                     {skill.items.map((item, itemIndex) => (
                       <span key={itemIndex} className="skill-item">
@@ -649,7 +765,7 @@ const SkillsMagicBento = ({ skills, ...props }) => {
               </div>
               <div className="card__content">
                 <div className="card__background-icon">
-                  {React.createElement(skillIcons[skill.category] || FallbackIcon, { size: '3em' })}
+                  {skillIcons[skill.category] && React.createElement(skillIcons[skill.category], { size: '3em' })}
                 </div>
                 <div className="skills-list">
                   {skill.items.map((item, itemIndex) => (

@@ -45,12 +45,12 @@ const Hero = () => {
       <div className="absolute inset-0">
         <LiquidEther 
           colors={['#5227FF', '#FF9FFC', '#B19EEF']}
-          mouseForce={20}
-          cursorSize={100}
-          resolution={0.5}
+          mouseForce={15} // Reduced for better performance
+          cursorSize={80} // Reduced for better performance
+          resolution={0.3} // Reduced resolution for better performance
           autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
+          autoSpeed={0.3} // Slower for better performance
+          autoIntensity={1.5} // Reduced intensity
           style={{ width: '100%', height: '100%' }}
         />
       </div>

@@ -220,7 +220,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
-  margin-top: 0.5em;
+  margin-top: auto;
+  padding-top: 1em;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(transparent, rgba(6, 0, 16, 0.8));
+  padding-bottom: 0.5em;
 }
 
 .skill-item {
@@ -287,6 +292,61 @@
 .card__content {
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Background icons container */
+.card__background-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.card__background-icons .infinite-scroll-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.card__background-icons .infinite-scroll-container {
+  width: 100% !important;
+  height: 100%;
+}
+
+/* Skill icon items for InfiniteScroll */
+.skill-icon-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3em;
+  height: 3em;
+  color: rgba(132, 0, 255, 0.4);
+  filter: drop-shadow(0 0 4px rgba(132, 0, 255, 0.2));
+  transition: all 0.3s ease;
+  animation: skillIconFloat 6s ease-in-out infinite; /* Slower animation for better performance */
+  will-change: transform; /* Optimize for GPU acceleration */
+}
+
+.skill-icon-item:hover {
+  color: rgba(132, 0, 255, 0.8);
+  filter: drop-shadow(0 0 10px rgba(132, 0, 255, 0.5));
+  transform: scale(1.1);
+}
+
+@keyframes skillIconFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
 }
 
 @media (max-width: 599px) {
@@ -307,5 +367,10 @@
   .card__background-icon {
     right: 0.5em;
     opacity: 0.3;
+  }
+  
+  .skill-icon-item {
+    width: 2em;
+    height: 2em;
   }
 }
