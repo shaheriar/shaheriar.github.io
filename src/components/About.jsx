@@ -18,7 +18,7 @@ const About = () => {
     },
     {
       category: "Programming Languages",
-      items: ["Python", "JavaScript", "TypeScript", "C++", "C", "Java", "MATLAB", "Bash", "HTML", "CSS"]
+      items: ["Python", "JavaScript", "Ruby", "TypeScript", "C++", "C", "Java", "MATLAB", "Bash", "HTML", "CSS"]
     },
     {
       category: "AI/ML Frameworks",

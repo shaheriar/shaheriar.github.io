@@ -37,7 +37,8 @@ import {
   SiSonarqube,
   SiJest,
   SiCypress,
-  SiPostman
+  SiPostman,
+  SiRuby
 } from 'react-icons/si';
 // Removed unused Lucide React imports
 import InfiniteScroll from './InfiniteScroll';
@@ -57,6 +58,7 @@ const skillIcons = {
   "C": SiC,
   "HTML": FaHtml5,
   "CSS": FaCss3Alt,
+  "Ruby": SiRuby,
   
   // AI/ML Frameworks
   "PyTorch": SiPytorch,
@@ -71,7 +73,6 @@ const skillIcons = {
   "Flask": FaPython, // Using Python icon for Flask
   "Node.js": FaNodeJs,
   "Express": SiExpress, // Using Node.js icon for Express
-  "REST APIs": FaGitAlt, // Using Git icon as placeholder for REST APIs
   
   // Mobile & Cross-Platform
   "Flutter": SiFlutter,
