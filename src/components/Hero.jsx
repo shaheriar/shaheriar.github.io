@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import LiquidEther from './LiquidEther'
 import GradientText from './GradientText'
 import ProfileCard from './ProfileCard'
+import StarBorder from './StarBorder'
 import profileImage from '../assets/transparent_profile.png'
 
 // Typewriter effect component
@@ -139,14 +140,20 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
             className="mb-12"
           >
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              onClick={scrollToAbout}
-              className="btn-primary"
+            <StarBorder
+              color="#ff9ffc"
+              speed="3s"
+              thickness={2}
+              
             >
-              Discover More
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(132, 0, 255, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                onClick={scrollToAbout}
+              >
+                See More
+              </motion.button>
+            </StarBorder>
           </motion.div>
 
           {/* Social Links */}
