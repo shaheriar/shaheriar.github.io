@@ -4,7 +4,7 @@ import './ProfileCard.css';
 const DEFAULT_BEHIND_GRADIENT =
   'radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),rgba(132,0,255,var(--card-opacity)) 4%,rgba(132,0,255,calc(var(--card-opacity)*0.75)) 10%,rgba(132,0,255,calc(var(--card-opacity)*0.5)) 50%,rgba(132,0,255,0) 100%),radial-gradient(35% 52% at 55% 20%,rgba(132,0,255,0.3) 0%,rgba(132,0,255,0) 100%),radial-gradient(100% 100% at 50% 50%,rgba(132,0,255,0.2) 1%,rgba(132,0,255,0) 76%),conic-gradient(from 124deg at 50% 50%,rgba(132,0,255,0.8) 0%,rgba(132,0,255,0.4) 40%,rgba(132,0,255,0.4) 60%,rgba(132,0,255,0.8) 100%)';
 
-const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,rgba(6,0,16,0.8) 0%,rgba(132,0,255,0.1) 100%)';
+const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,rgba(6,0,16,0.4) 0%,rgba(132,0,255,0.3) 50%,rgba(255,159,252,0.2) 100%)';
 
 const ANIMATION_CONFIG = {
   SMOOTH_DURATION: 600,

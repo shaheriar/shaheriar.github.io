@@ -67,7 +67,7 @@ const About = () => {
             >
                 <ProfileCard
                   avatarUrl={profileImage}
-                  iconUrl={codeLogo}
+                  grainUrl={codeLogo}
                   name="Shaheriar Malik"
                   title="Software Engineer"
                   handle="shaheriar"
@@ -76,6 +76,7 @@ const About = () => {
                   showUserInfo={true}
                   enableTilt={true}
                   enableMobileTilt={true}
+                  innerGradient={true}
                   mobileTiltSensitivity={3}
                   onContactClick={() => {
                     const element = document.querySelector('#contact')
@@ -84,7 +85,7 @@ const About = () => {
                     }
                   }}
                   className="w-full"
-                />  
+                />
             </motion.div>
           </motion.div>
 

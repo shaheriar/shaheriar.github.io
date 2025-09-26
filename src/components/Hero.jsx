@@ -208,7 +208,7 @@ const Hero = () => {
             >
                 <ProfileCard
                   avatarUrl={profileImage}
-                  iconUrl={codeLogo}
+                  grainUrl={codeLogo}
                   name="Shaheriar Malik"
                   title="Software Engineer"
                   handle="shaheriar"
@@ -217,6 +217,7 @@ const Hero = () => {
                   showUserInfo={true}
                   enableTilt={true}
                   enableMobileTilt={true}
+                  innerGradient={true}
                   mobileTiltSensitivity={3}
                   onContactClick={() => {
                     const element = document.querySelector('#contact')
