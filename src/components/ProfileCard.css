@@ -26,36 +26,6 @@
   --sunpillar-clr-5: var(--sunpillar-5);
   --sunpillar-clr-6: var(--sunpillar-6);
   --card-radius: 30px;
-  
-  /* MagicBento-inspired colors */
-  --card-bg: rgba(6, 0, 16, 0.9);
-  --card-bg-light: rgba(6, 0, 16, 0.95);
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.9);
-  --text-tertiary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(57, 46, 78, 0.5);
-  --border-hover: rgba(132, 0, 255, 0.8);
-  --user-info-bg: rgba(132, 0, 255, 0.1);
-  --contact-btn-bg: transparent;
-  --contact-btn-text: rgba(255, 255, 255, 0.9);
-  --contact-btn-border: rgba(132, 0, 255, 0.5);
-  --contact-btn-hover-border: rgba(132, 0, 255, 0.8);
-}
-
-/* Dark mode overrides - same as default since we're always dark */
-.dark {
-  --card-bg: rgba(6, 0, 16, 0.95);
-  --card-bg-light: rgba(6, 0, 16, 0.98);
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.9);
-  --text-tertiary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(57, 46, 78, 0.6);
-  --border-hover: rgba(132, 0, 255, 0.9);
-  --user-info-bg: rgba(132, 0, 255, 0.15);
-  --contact-btn-bg: transparent;
-  --contact-btn-text: rgba(255, 255, 255, 0.9);
-  --contact-btn-border: rgba(132, 0, 255, 0.6);
-  --contact-btn-hover-border: rgba(132, 0, 255, 0.9);
 }
 
 .pc-card-wrapper {
@@ -117,9 +87,9 @@
       hsla(266, 25%, 70%, calc(var(--card-opacity) * 0.5)) 50%,
       hsla(266, 0%, 60%, 0) 100%
     ),
-    radial-gradient(35% 52% at 55% 20%, #00ffaac4 0%, #073aff00 100%),
-    radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
-    conic-gradient(from 124deg at 50% 50%, #c137ffff 0%, #07c6ffff 40%, #07c6ffff 60%, #c137ffff 100%);
+    radial-gradient(35% 52% at 55% 20%, rgba(132, 0, 255, 0.3) 0%, rgba(132, 0, 255, 0) 100%),
+    radial-gradient(100% 100% at 50% 50%, rgba(255, 159, 252, 0.2) 1%, rgba(132, 0, 255, 0) 76%),
+    conic-gradient(from 124deg at 50% 50%, rgba(132, 0, 255, 0.4) 0%, rgba(255, 159, 252, 0.3) 40%, rgba(255, 159, 252, 0.3) 60%, rgba(132, 0, 255, 0.4) 100%);
   overflow: hidden;
 }
 
@@ -141,7 +111,7 @@
   inset: 1px;
   position: absolute;
   background-image: var(--inner-gradient);
-  background-color: var(--card-bg);
+  background-color: rgba(0, 0, 0, 0.9);
   transform: translate3d(0, 0, 0.01px);
 }
 
@@ -319,9 +289,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--user-info-bg);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(30px);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 12px 14px;
   pointer-events: auto;
@@ -338,7 +308,7 @@
   height: 48px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
 }
 
@@ -359,31 +329,30 @@
 .pc-handle {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1;
 }
 
 .pc-status {
   font-size: 14px;
-  color: var(--text-tertiary);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1;
 }
 
 .pc-contact-btn {
-  border: 1px solid var(--contact-btn-border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--contact-btn-text);
-  background: var(--contact-btn-bg);
+  color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   transition: all 0.2s ease;
   backdrop-filter: blur(10px);
 }
 
 .pc-contact-btn:hover {
-  border-color: var(--contact-btn-hover-border);
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-1px);
   transition: all 0.2s ease;
 }
@@ -415,7 +384,7 @@
   margin: 0;
   font-size: min(5svh, 3em);
   margin: 0;
-  background-image: linear-gradient(to bottom, var(--text-primary), #6f6fbe);
+  background-image: linear-gradient(to bottom, #fff, #6f6fbe);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -430,7 +399,7 @@
   font-size: 16px;
   margin: 0 auto;
   width: min-content;
-  background-image: linear-gradient(to bottom, var(--text-primary), #4a4ac0);
+  background-image: linear-gradient(to bottom, #fff, #4a4ac0);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -491,7 +460,6 @@
   .pc-mini-avatar {
     width: 28px;
     height: 28px;
-    border: 1px solid var(--border-color);
   }
 
   .pc-user-details {
@@ -542,7 +510,6 @@
   .pc-mini-avatar {
     width: 24px;
     height: 24px;
-    border: 1px solid var(--border-color);
   }
 
   .pc-user-details {
@@ -586,7 +553,6 @@
   .pc-mini-avatar {
     width: 20px;
     height: 20px;
-    border: 1px solid var(--border-color);
   }
 
   .pc-user-details {

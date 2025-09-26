@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import './ProfileCard.css';
 
-const DEFAULT_BEHIND_GRADIENT_DARK =
+const DEFAULT_BEHIND_GRADIENT =
   'radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),rgba(132,0,255,var(--card-opacity)) 4%,rgba(132,0,255,calc(var(--card-opacity)*0.75)) 10%,rgba(132,0,255,calc(var(--card-opacity)*0.5)) 50%,rgba(132,0,255,0) 100%),radial-gradient(35% 52% at 55% 20%,rgba(132,0,255,0.3) 0%,rgba(132,0,255,0) 100%),radial-gradient(100% 100% at 50% 50%,rgba(132,0,255,0.2) 1%,rgba(132,0,255,0) 76%),conic-gradient(from 124deg at 50% 50%,rgba(132,0,255,0.8) 0%,rgba(132,0,255,0.4) 40%,rgba(132,0,255,0.4) 60%,rgba(132,0,255,0.8) 100%)';
 
-const DEFAULT_BEHIND_GRADIENT_LIGHT =
-  'radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),rgba(132,0,255,var(--card-opacity)) 4%,rgba(132,0,255,calc(var(--card-opacity)*0.75)) 10%,rgba(132,0,255,calc(var(--card-opacity)*0.5)) 50%,rgba(132,0,255,0) 100%),radial-gradient(35% 52% at 55% 20%,rgba(132,0,255,0.2) 0%,rgba(132,0,255,0) 100%),radial-gradient(100% 100% at 50% 50%,rgba(132,0,255,0.15) 1%,rgba(132,0,255,0) 76%),conic-gradient(from 124deg at 50% 50%,rgba(132,0,255,0.6) 0%,rgba(132,0,255,0.3) 40%,rgba(132,0,255,0.3) 60%,rgba(132,0,255,0.6) 100%)';
-
-const DEFAULT_INNER_GRADIENT_DARK = 'linear-gradient(145deg,rgba(6,0,16,0.8) 0%,rgba(132,0,255,0.1) 100%)';
-const DEFAULT_INNER_GRADIENT_LIGHT = 'linear-gradient(145deg,rgba(6,0,16,0.6) 0%,rgba(132,0,255,0.05) 100%)';
+const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,rgba(6,0,16,0.8) 0%,rgba(132,0,255,0.1) 100%)';
 
 const ANIMATION_CONFIG = {
   SMOOTH_DURATION: 600,
@@ -270,14 +266,11 @@ const ProfileCardComponent = ({
 
   const cardStyle = useMemo(
     () => {
-      const defaultBehindGradient = isDarkMode ? DEFAULT_BEHIND_GRADIENT_DARK : DEFAULT_BEHIND_GRADIENT_LIGHT;
-      const defaultInnerGradient = isDarkMode ? DEFAULT_INNER_GRADIENT_DARK : DEFAULT_INNER_GRADIENT_LIGHT;
-      
       return {
         '--icon': iconUrl ? `url(${iconUrl})` : 'none',
         '--grain': grainUrl ? `url(${grainUrl})` : 'none',
-        '--behind-gradient': showBehindGradient ? (behindGradient ?? defaultBehindGradient) : 'none',
-        '--inner-gradient': innerGradient ?? defaultInnerGradient
+        '--behind-gradient': showBehindGradient ? (behindGradient ?? DEFAULT_BEHIND_GRADIENT) : 'none',
+        '--inner-gradient': innerGradient ?? DEFAULT_INNER_GRADIENT
       };
     },
     [iconUrl, grainUrl, showBehindGradient, behindGradient, innerGradient, isDarkMode]

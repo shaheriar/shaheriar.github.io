@@ -5,6 +5,7 @@ import { staggerContainer, staggerItem, hoverScale } from '../config/animations'
 import SkillsMagicBento from './SkillsMagicBento'
 import ProfileCard from './ProfileCard'
 import profileImage from '../assets/transparent_profile.png'
+import codeLogo from '../assets/code-icon.webp'
 
 const About = () => {
   const skills = [
@@ -64,25 +65,26 @@ const About = () => {
               whileHover={{ scale: 1.02 }}
               className="relative max-w-sm"
             >
-              <ProfileCard
-                avatarUrl={profileImage}
-                name="Shaheriar Malik"
-                title="Software Engineer"
-                handle="shaheriar"
-                status="Let's chat!"
-                contactText="Contact Me"
-                showUserInfo={true}
-                enableTilt={true}
-                enableMobileTilt={true}
-                mobileTiltSensitivity={3}
-                onContactClick={() => {
-                  const element = document.querySelector('#contact')
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' })
-                  }
-                }}
-                className="w-full left-0 right-0 mx-auto"
-              />
+                <ProfileCard
+                  avatarUrl={profileImage}
+                  iconUrl={codeLogo}
+                  name="Shaheriar Malik"
+                  title="Software Engineer"
+                  handle="shaheriar"
+                  status="Online"
+                  contactText="Contact Me"
+                  showUserInfo={true}
+                  enableTilt={true}
+                  enableMobileTilt={true}
+                  mobileTiltSensitivity={3}
+                  onContactClick={() => {
+                    const element = document.querySelector('#contact')
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }}
+                  className="w-full"
+                />  
             </motion.div>
           </motion.div>
 

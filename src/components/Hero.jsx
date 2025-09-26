@@ -6,6 +6,7 @@ import GradientText from './GradientText'
 import ProfileCard from './ProfileCard'
 import StarBorder from './StarBorder'
 import profileImage from '../assets/transparent_profile.png'
+import codeLogo from '../assets/code-icon.webp'
 
 // Typewriter effect component
 const TypewriterText = ({ text, startAfter = 0, speed = 50, onComplete }) => {
@@ -205,25 +206,26 @@ const Hero = () => {
               whileHover={{ scale: 1.02 }}
               className="relative w-full max-w-sm"
             >
-              <ProfileCard
-                avatarUrl={profileImage}
-                name="Shaheriar Malik"
-                title="Software Engineer"
-                handle="shaheriar"
-                status="Let's chat!"
-                contactText="Contact Me"
-                showUserInfo={true}
-                enableTilt={true}
-                enableMobileTilt={true}
-                mobileTiltSensitivity={3}
-                onContactClick={() => {
-                  const element = document.querySelector('#contact')
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' })
-                  }
-                }}
-                className="w-full"
-              />
+                <ProfileCard
+                  avatarUrl={profileImage}
+                  iconUrl={codeLogo}
+                  name="Shaheriar Malik"
+                  title="Software Engineer"
+                  handle="shaheriar"
+                  status="Online"
+                  contactText="Contact Me"
+                  showUserInfo={true}
+                  enableTilt={true}
+                  enableMobileTilt={true}
+                  mobileTiltSensitivity={3}
+                  onContactClick={() => {
+                    const element = document.querySelector('#contact')
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }}
+                  className="w-full"
+                />
             </motion.div>
           </div>
         </div>
