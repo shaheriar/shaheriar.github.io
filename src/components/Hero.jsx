@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import LiquidEther from './LiquidEther'
 import GradientText from './GradientText'
+import ProfileCard from './ProfileCard'
+import profileImage from '../assets/transparent_profile.png'
 
 // Typewriter effect component
 const TypewriterText = ({ text, startAfter = 0, speed = 50, onComplete }) => {
@@ -38,7 +40,7 @@ const Hero = () => {
     }
   }
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden w-full">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden w-full pt-20">
       {/* LiquidEther Background */}
       <div className="absolute inset-0">
         <LiquidEther 
@@ -54,12 +56,45 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center">
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
+          {/* Mobile ProfileCard - Show First */}
+          <div className="lg:hidden flex justify-center items-center w-full order-1">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative max-w-sm"
+            >
+              <ProfileCard
+                avatarUrl={profileImage}
+                name="Shaheriar Malik"
+                title="Software Engineer"
+                handle="shaheriar"
+                status="Let's chat!"
+                contactText="Contact Me"
+                showUserInfo={true}
+                enableTilt={true}
+                enableMobileTilt={true}
+                mobileTiltSensitivity={3}
+                onContactClick={() => {
+                  const element = document.querySelector('#contact')
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }}
+                className="w-full left-0 right-0 mx-auto"
+              />
+            </motion.div>
+          </div>
+
+          {/* Left Side - Hero Text */}
+          <div className="text-center lg:text-left lg:col-span-6 order-2 lg:order-1">
           {/* Main Title */}
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-6"
           >
             <TypewriterText
@@ -81,7 +116,7 @@ const Hero = () => {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={showH2 ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
             className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-700 dark:text-gray-300 mb-8"
           >
             {showH2 ? (
@@ -113,7 +148,7 @@ const Hero = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={showSubtitle ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             Passionate about building innovative solutions with expertise in{" "}
@@ -122,11 +157,12 @@ const Hero = () => {
             <GradientText colors={['#ec4899', '#f472b6', '#ec4899']}>Full-Stack Development</GradientText>
           </motion.p>
 
+
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={showCTA ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
             className="mb-12"
           >
             <motion.button
@@ -143,7 +179,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={showSocial ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
             className="flex justify-center space-x-6"
           >
             <motion.a
@@ -175,6 +211,38 @@ const Hero = () => {
               <FaEnvelope size={28} />
             </motion.a>
           </motion.div>
+          </div>
+
+          {/* Right Side - ProfileCard (Desktop Only) */}
+          <div className="hidden lg:flex justify-center lg:justify-end lg:col-span-4 lg:order-2">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={showCTA ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative w-full max-w-sm"
+            >
+              <ProfileCard
+                avatarUrl={profileImage}
+                name="Shaheriar Malik"
+                title="Software Engineer"
+                handle="shaheriar"
+                status="Let's chat!"
+                contactText="Contact Me"
+                showUserInfo={true}
+                enableTilt={true}
+                enableMobileTilt={true}
+                mobileTiltSensitivity={3}
+                onContactClick={() => {
+                  const element = document.querySelector('#contact')
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }}
+                className="w-full"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
 
