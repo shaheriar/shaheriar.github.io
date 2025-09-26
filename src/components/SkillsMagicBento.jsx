@@ -102,7 +102,7 @@ const generateSkillIcons = (skillItems) => {
     .map((skill, index) => ({
       content: (
         <div className="skill-icon-item">
-          {React.createElement(skillIcons[skill], { size: '2em' })}
+          {React.createElement(skillIcons[skill], { size: '3em' })}
         </div>
       )
     }));

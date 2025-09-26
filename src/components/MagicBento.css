@@ -230,11 +230,11 @@
 
 .skill-item {
   display: inline-block;
-  padding: 0.25em 0.5em;
+  padding: 0.4em 0.8em; /* Increased padding for better spacing */
   background: rgba(132, 0, 255, 0.1);
   border: 1px solid rgba(132, 0, 255, 0.3);
   border-radius: 12px;
-  font-size: 11px;
+  font-size: 14px; /* Increased from 11px to 14px for better readability */
   color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
   transition: all 0.2s ease;
@@ -325,8 +325,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3em;
-  height: 3em;
+  width: 4em; /* Increased from 3em to accommodate larger icons */
+  height: 4em; /* Increased from 3em to accommodate larger icons */
   color: rgba(132, 0, 255, 0.4);
   filter: drop-shadow(0 0 4px rgba(132, 0, 255, 0.2));
   transition: all 0.3s ease;
@@ -351,8 +351,8 @@
 
 @media (max-width: 599px) {
   .skill-item {
-    font-size: 10px;
-    padding: 0.2em 0.4em;
+    font-size: 12px; /* Increased from 10px to 12px for better mobile readability */
+    padding: 0.3em 0.6em; /* Increased padding for better mobile spacing */
   }
   
   .skills-list {
@@ -370,7 +370,7 @@
   }
   
   .skill-icon-item {
-    width: 2em;
-    height: 2em;
+    width: 3em; /* Increased from 2em to accommodate larger icons */
+    height: 3em; /* Increased from 2em to accommodate larger icons */
   }
 }
