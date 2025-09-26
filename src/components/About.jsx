@@ -15,11 +15,11 @@ const About = () => {
     },
     {
       category: "Web Development",
-      items: ["React", "NextJS", "Flask", "Node.js", "Express", "REST APIs"]
+      items: ["React", "NextJS", "Flask", "Node.js", "Express", "REST APIs", "HTML", "CSS"]
     },
     {
       category: "Programming Languages",
-      items: ["Python", "JavaScript", "Ruby", "TypeScript", "C++", "C", "Java", "MATLAB", "Bash", "HTML", "CSS"]
+      items: ["Python", "JavaScript", "Ruby", "TypeScript", "C++", "C", "Java", "MATLAB", "Bash"]
     },
     {
       category: "AI/ML Frameworks",
