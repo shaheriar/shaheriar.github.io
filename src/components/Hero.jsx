@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import LiquidEther from './LiquidEther'
@@ -34,6 +34,8 @@ const Hero = () => {
   const [showCTA, setShowCTA] = useState(false)
   const [showSocial, setShowSocial] = useState(false)
 
+  // Memoize the colors array to prevent LiquidEther from reinitializing
+  const liquidEtherColors = useMemo(() => ['#5227FF', '#FF9FFC', '#B19EEF'], [])
 
   const scrollToAbout = () => {
     const element = document.querySelector('#about')
@@ -46,7 +48,7 @@ const Hero = () => {
       {/* LiquidEther Background */}
       <div className="absolute inset-0">
         <LiquidEther 
-          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+          colors={liquidEtherColors}
           mouseForce={15} // Reduced for better performance
           cursorSize={80} // Reduced for better performance
           resolution={0.3} // Reduced resolution for better performance
@@ -126,6 +128,11 @@ const Hero = () => {
             animate={showSubtitle ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
+            style={{ 
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale',
+              textRendering: 'optimizeLegibility'
+            }}
           >
             Passionate about building innovative solutions with expertise in{" "}
             <GradientText colors={['#3b82f6', '#6366f1', '#3b82f6']}>Frontend Development</GradientText>,{" "}
@@ -148,7 +155,7 @@ const Hero = () => {
               style={{ pointerEvents: 'auto' }}
             >
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(132, 0, 255, 0.4)" }}
+                whileHover={{ scale: 1.05}}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToAbout}
                 style={{ pointerEvents: 'auto' }}
