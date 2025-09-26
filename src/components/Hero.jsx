@@ -56,7 +56,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" style={{ pointerEvents: 'none' }}>
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
           {/* Mobile ProfileCard - Hidden on mobile, moved to About section */}
           <div className="hidden">
@@ -144,12 +144,13 @@ const Hero = () => {
               color="#ff9ffc"
               speed="3s"
               thickness={2}
-              
+              style={{ pointerEvents: 'auto' }}
             >
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(132, 0, 255, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToAbout}
+                style={{ pointerEvents: 'auto' }}
               >
                 See More
               </motion.button>
@@ -162,6 +163,7 @@ const Hero = () => {
             animate={showSocial ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
             className="flex justify-center space-x-6"
+            style={{ pointerEvents: 'auto' }}
           >
             <motion.a
               whileHover={{ scale: 1.2, rotate: 5 }}
@@ -195,7 +197,7 @@ const Hero = () => {
           </div>
 
           {/* Right Side - ProfileCard (Desktop Only) */}
-          <div className="hidden lg:flex justify-center lg:justify-end lg:col-span-4 lg:order-2">
+          <div className="hidden lg:flex justify-center lg:justify-end lg:col-span-4 lg:order-2" style={{ pointerEvents: 'auto' }}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={showCTA ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
