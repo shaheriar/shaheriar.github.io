@@ -13,7 +13,7 @@ function App() {
   return (
     <ThemeProvider>
       <MetaTags />
-      <div className="App min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 overflow-x-hidden prevent-overflow">
+      <div className="App min-h-screen transition-colors duration-300 overflow-x-hidden prevent-overflow" style={{ backgroundColor: 'var(--background-dark)', color: 'var(--text-primary)' }}>
         <Navigation />
         <Hero />
         <About />

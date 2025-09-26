@@ -4,10 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* MagicBento-inspired color scheme */
+:root {
+  --purple-primary: rgba(132, 0, 255, 1);
+  --purple-glow: rgba(132, 0, 255, 0.2);
+  --purple-border: rgba(132, 0, 255, 0.8);
+  --border-color: #392e4e;
+  --background-dark: #060010;
+  --background-darker: #040008;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+  --card-bg: rgba(6, 0, 16, 0.8);
+  --card-border: rgba(57, 46, 78, 0.5);
+  --gradient-primary: linear-gradient(135deg, rgba(132, 0, 255, 0.1) 0%, rgba(132, 0, 255, 0.05) 100%);
+  --gradient-secondary: linear-gradient(135deg, rgba(132, 0, 255, 0.2) 0%, rgba(132, 0, 255, 0.1) 100%);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    background-color: var(--background-dark);
+    color: var(--text-primary);
   }
   
   body {
@@ -15,6 +34,8 @@
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    background-color: var(--background-dark);
+    color: var(--text-primary);
   }
   
   * {
@@ -24,23 +45,67 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+    background: var(--purple-primary);
+    color: var(--text-primary);
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    box-shadow: 0 10px 25px var(--purple-glow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--purple-border);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 15px 35px var(--purple-glow);
+    transform: scale(1.05);
+    background: rgba(132, 0, 255, 0.9);
   }
   
   .btn-secondary {
-    @apply bg-transparent border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300;
+    background: transparent;
+    border: 2px solid var(--purple-primary);
+    color: var(--purple-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background: var(--purple-primary);
+    color: var(--text-primary);
+    box-shadow: 0 10px 25px var(--purple-glow);
   }
   
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+  }
+  
+  .card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+    border-color: var(--purple-border);
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+    background: linear-gradient(135deg, var(--purple-primary) 0%, rgba(132, 0, 255, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
   
   .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    background: var(--gradient-primary);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
   }
 }
 

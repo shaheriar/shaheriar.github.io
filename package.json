@@ -14,7 +14,13 @@
     "type": "git",
     "url": "git+https://github.com/shaheriar/shaheriar.github.io"
   },
-  "keywords": ["portfolio", "react", "framer-motion", "tailwindcss", "frontend"],
+  "keywords": [
+    "portfolio",
+    "react",
+    "framer-motion",
+    "tailwindcss",
+    "frontend"
+  ],
   "author": "Shaheriar Malik",
   "license": "ISC",
   "bugs": {
@@ -33,9 +39,13 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "framer-motion": "^10.16.16",
+    "gsap": "^3.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0"
+    "react-icons": "^4.12.0",
+    "tailwind-merge": "^3.3.1",
+    "three": "^0.180.0"
   }
 }

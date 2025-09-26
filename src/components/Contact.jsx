@@ -52,7 +52,7 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-20" style={{ backgroundColor: 'var(--background-dark)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -63,7 +63,8 @@ const Contact = () => {
           {/* Section Title */}
           <motion.h2
             variants={staggerItem}
-            className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-16"
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+            style={{ color: 'var(--text-primary)' }}
           >
             Get In Touch
           </motion.h2>
@@ -74,7 +75,8 @@ const Contact = () => {
               <div>
                 <motion.h3
                   whileHover={{ scale: 1.02 }}
-                  className="text-2xl font-bold text-gray-900 dark:text-white mb-4"
+                  className="text-2xl font-bold mb-4"
+                  style={{ color: 'var(--text-primary)' }}
                 >
                   Let's Connect
                 </motion.h3>
@@ -83,7 +85,8 @@ const Contact = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+                  className="text-lg leading-relaxed"
+                  style={{ color: 'var(--text-secondary)' }}
                 >
                   I'm always interested in new opportunities and exciting projects. 
                   Whether you have a question, want to collaborate, or just want to say hi, 
@@ -104,7 +107,11 @@ const Contact = () => {
                     href={contact.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 group"
+                    className="flex items-center space-x-4 p-4 rounded-lg transition-colors duration-300 group"
+                    style={{ 
+                      backgroundColor: 'var(--card-bg)',
+                      border: '1px solid var(--card-border)'
+                    }}
                   >
                     <motion.div
                       whileHover={{ rotate: 5, scale: 1.1 }}
@@ -113,8 +120,8 @@ const Contact = () => {
                       <contact.icon size={24} />
                     </motion.div>
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">{contact.label}</p>
-                      <p className="text-gray-600 dark:text-gray-400">{contact.value}</p>
+                      <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>{contact.label}</p>
+                      <p style={{ color: 'var(--text-secondary)' }}>{contact.value}</p>
                     </div>
                   </motion.a>
                 ))}
@@ -156,7 +163,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
                   >
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
                       Name
                     </label>
                     <input
@@ -165,7 +172,13 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
+                      style={{ 
+                        backgroundColor: 'var(--card-bg)',
+                        borderColor: 'var(--card-border)',
+                        color: 'var(--text-primary)',
+                        focusRingColor: 'var(--purple-primary)'
+                      }}
                       placeholder="Your name"
                     />
                   </motion.div>
@@ -176,7 +189,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.6 }}
                   >
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
                       Email
                     </label>
                     <input
@@ -185,7 +198,13 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
+                      style={{ 
+                        backgroundColor: 'var(--card-bg)',
+                        borderColor: 'var(--card-border)',
+                        color: 'var(--text-primary)',
+                        focusRingColor: 'var(--purple-primary)'
+                      }}
                       placeholder="your.email@example.com"
                     />
                   </motion.div>
@@ -197,7 +216,7 @@ const Contact = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.7 }}
                 >
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
                     Subject
                   </label>
                   <input
@@ -206,7 +225,13 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
+                    style={{ 
+                      backgroundColor: 'var(--card-bg)',
+                      borderColor: 'var(--card-border)',
+                      color: 'var(--text-primary)',
+                      focusRingColor: 'var(--purple-primary)'
+                    }}
                     placeholder="What's this about?"
                   />
                 </motion.div>
@@ -217,7 +242,7 @@ const Contact = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.8 }}
                 >
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
                     Message
                   </label>
                   <textarea
@@ -226,7 +251,13 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300 resize-none"
+                    style={{ 
+                      backgroundColor: 'var(--card-bg)',
+                      borderColor: 'var(--card-border)',
+                      color: 'var(--text-primary)',
+                      focusRingColor: 'var(--purple-primary)'
+                    }}
                     placeholder="Tell me about your project or just say hello!"
                   />
                 </motion.div>

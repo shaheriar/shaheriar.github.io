@@ -26,7 +26,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12">
+    <footer className="py-12" style={{ backgroundColor: 'var(--background-darker)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"

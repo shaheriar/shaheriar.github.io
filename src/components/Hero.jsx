@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import LiquidEther from './LiquidEther'
+import GradientText from './GradientText'
 
 // Typewriter effect component
 const TypewriterText = ({ text, startAfter = 0, speed = 50, onComplete }) => {
@@ -28,30 +30,6 @@ const Hero = () => {
   const [showCTA, setShowCTA] = useState(false)
   const [showSocial, setShowSocial] = useState(false)
 
-  // Generate random animation values once
-  const bg1 = React.useMemo(() => ({
-    x: [0, Math.random() * 400 - 200, Math.random() * 400 - 200, Math.random() * 400 - 200, 0],
-    y: [0, Math.random() * 400 - 200, Math.random() * 400 - 200, Math.random() * 400 - 200, 0],
-    scale: [1, Math.random() * 2 + 0.5, Math.random() * 2 + 0.5, Math.random() * 2 + 0.5, 1],
-    rotate: [0, 180, 360],
-    opacity: [0.7, Math.random() * 0.6 + 0.2, Math.random() * 0.6 + 0.2, Math.random() * 0.6 + 0.2, 0.7],
-  }), []);
-
-  const bg2 = React.useMemo(() => ({
-    x: [0, Math.random() * 500 - 250, Math.random() * 500 - 250, Math.random() * 500 - 250, 0],
-    y: [0, Math.random() * 500 - 250, Math.random() * 500 - 250, Math.random() * 500 - 250, 0],
-    scale: [1.2, Math.random() * 2.5 + 0.3, Math.random() * 2.5 + 0.3, Math.random() * 2.5 + 0.3, 1.2],
-    rotate: [360, 180, 0],
-    opacity: [0.6, Math.random() * 0.7 + 0.1, Math.random() * 0.7 + 0.1, Math.random() * 0.7 + 0.1, 0.6],
-  }), []);
-
-  const bg3 = React.useMemo(() => ({
-    x: [0, Math.random() * 600 - 300, Math.random() * 600 - 300, Math.random() * 600 - 300, Math.random() * 600 - 300, 0],
-    y: [0, Math.random() * 600 - 300, Math.random() * 600 - 300, Math.random() * 600 - 300, Math.random() * 600 - 300, 0],
-    scale: [1, Math.random() * 3 + 0.2, Math.random() * 3 + 0.2, Math.random() * 3 + 0.2, Math.random() * 3 + 0.2, 1],
-    rotate: [0, -180, -360],
-    opacity: [0.8, Math.random() * 0.8 + 0.1, Math.random() * 0.8 + 0.1, Math.random() * 0.8 + 0.1, Math.random() * 0.8 + 0.1, 0.8],
-  }), []);
 
   const scrollToAbout = () => {
     const element = document.querySelector('#about')
@@ -60,17 +38,18 @@ const Hero = () => {
     }
   }
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 w-full">
-      {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div animate={bg1} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 dark:bg-blue-800 rounded-full mix-blend-multiply filter blur-xl"
-        />
-        <motion.div animate={bg2} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 dark:bg-purple-800 rounded-full mix-blend-multiply filter blur-xl"
-        />
-        <motion.div animate={bg3} transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-200 dark:bg-pink-800 rounded-full mix-blend-multiply filter blur-xl"
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden w-full">
+      {/* LiquidEther Background */}
+      <div className="absolute inset-0">
+        <LiquidEther 
+          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+          mouseForce={20}
+          cursorSize={100}
+          resolution={0.5}
+          autoDemo={true}
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          style={{ width: '100%', height: '100%' }}
         />
       </div>
 
@@ -89,14 +68,14 @@ const Hero = () => {
               speed={100}
             />
             <br className="sm:hidden" />
-            <span className="gradient-text">
+            <GradientText colors={['#8400ff', '#ff9ffc', '#8400ff']}>
               <TypewriterText
                 text="Shaheriar Malik"
                 startAfter={"Hi, my name is ".length * 100}
                 speed={100}
                 onComplete={() => setShowH2(true)} // triggers H2 animation
-              />
-            </span>
+            />
+            </GradientText>
           </motion.h1>
 
           <motion.h2
@@ -111,18 +90,18 @@ const Hero = () => {
                   text="I'm a "
                   speed={100}
                 />
-                <span className="gradient-text">
+                <GradientText colors={['#8400ff', '#ff9ffc', '#8400ff']}>
                   <TypewriterText
                     text="Software Engineer"
                     startAfter={"I'm a ".length * 100}
                     speed={100}
                     onComplete={() => {
-                      setShowSubtitle(true)
-                      setTimeout(() => setShowCTA(true), 200)
-                      setTimeout(() => setShowSocial(true), 400)
-                    }}
+                  setShowSubtitle(true)
+                  setTimeout(() => setShowCTA(true), 200)
+                  setTimeout(() => setShowSocial(true), 400)
+                }}
                   />
-                </span>
+                </GradientText>
               </>
             ) : <TypewriterText
                   text=""
@@ -138,9 +117,9 @@ const Hero = () => {
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             Passionate about building innovative solutions with expertise in{" "}
-            <span className="font-semibold text-blue-600 dark:text-blue-400">Frontend Development</span>,{" "}
-            <span className="font-semibold text-purple-600 dark:text-purple-400">AI/ML</span>, and{" "}
-            <span className="font-semibold text-pink-600 dark:text-pink-400">Full-Stack Development</span>
+            <GradientText colors={['#3b82f6', '#6366f1', '#3b82f6']}>Frontend Development</GradientText>,{" "}
+            <GradientText colors={['#8400ff', '#a855f7', '#8400ff']}>AI/ML</GradientText>, and{" "}
+            <GradientText colors={['#ec4899', '#f472b6', '#ec4899']}>Full-Stack Development</GradientText>
           </motion.p>
 
           {/* CTA Button */}

@@ -56,7 +56,7 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="projects" className="py-20" style={{ backgroundColor: 'var(--background-darker)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -67,7 +67,8 @@ const Projects = () => {
           {/* Section Title */}
           <motion.h2
             variants={staggerItem}
-            className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-16"
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+            style={{ color: 'var(--text-primary)' }}
           >
             Featured Projects
           </motion.h2>
@@ -97,7 +98,7 @@ const Projects = () => {
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="relative group cursor-pointer"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300" style={{ background: 'var(--gradient-secondary)' }}></div>
                     <img
                       src={project.image}
                       alt={project.title}
@@ -143,7 +144,8 @@ const Projects = () => {
                 >
                   <motion.h3
                     whileHover={{ scale: 1.02 }}
-                    className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3"
+                    className="text-2xl md:text-3xl font-bold mb-4 flex items-center gap-3"
+                    style={{ color: 'var(--text-primary)' }}
                   >
                     {project.title}
                     {project.isPrivate && (
@@ -164,7 +166,8 @@ const Projects = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed"
+                    className="text-lg mb-6 leading-relaxed"
+                    style={{ color: 'var(--text-secondary)' }}
                   >
                     {project.description}
                   </motion.p>
@@ -185,7 +188,12 @@ const Projects = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 + techIndex * 0.1 }}
                         whileHover={{ scale: 1.05 }}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
+                        className="px-3 py-1 rounded-full text-sm font-medium"
+                        style={{ 
+                          backgroundColor: 'var(--purple-glow)', 
+                          color: 'var(--purple-primary)',
+                          border: '1px solid var(--purple-border)'
+                        }}
                       >
                         {tech}
                       </motion.span>
@@ -215,7 +223,12 @@ const Projects = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-2 bg-gray-800 dark:bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors duration-300"
+                        className="flex items-center space-x-2 px-6 py-3 rounded-full transition-colors duration-300"
+                        style={{ 
+                          backgroundColor: 'var(--card-bg)', 
+                          color: 'var(--text-primary)',
+                          border: '1px solid var(--card-border)'
+                        }}
                       >
                         <FaGithub size={18} />
                         <span>View Code</span>
@@ -234,7 +247,8 @@ const Projects = () => {
           >
             <motion.p
               whileHover={{ scale: 1.02 }}
-              className="text-xl text-gray-600 dark:text-gray-400 mb-6"
+              className="text-xl mb-6"
+              style={{ color: 'var(--text-secondary)' }}
             >
               Interested in seeing more of my work?
             </motion.p>
