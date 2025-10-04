@@ -61,12 +61,6 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" style={{ pointerEvents: 'none' }}>
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
-          {/* Mobile ProfileCard - Hidden on mobile, moved to About section */}
-          <div className="hidden">
-            {/* ProfileCard moved to About section for mobile */}
-          </div>
-
-          {/* Hero Text - Full width on mobile, 60% on desktop */}
           <div className="text-center lg:text-left lg:col-span-6 order-1">
           {/* Main Title */}
           <motion.h1
@@ -142,10 +136,14 @@ const Hero = () => {
 
 
           {/* CTA Button */}
-          <motion.div
+          <motion.button
+            whileHover={{ scale: 1.15}}
+            whileTap={{ scale: 1 }}
+            onClick={scrollToAbout}
+            style={{ pointerEvents: 'auto' }}
             initial={{ opacity: 0, y: 20 }}
             animate={showCTA ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
             className="mb-12"
           >
             <StarBorder
@@ -154,16 +152,9 @@ const Hero = () => {
               thickness={5}
               style={{ pointerEvents: 'auto' }}
             >
-              <motion.button
-                whileHover={{ scale: 1.05}}
-                whileTap={{ scale: 0.95 }}
-                onClick={scrollToAbout}
-                style={{ pointerEvents: 'auto' }}
-              >
-                See More
-              </motion.button>
+              See More
             </StarBorder>
-          </motion.div>
+          </motion.button>
 
           {/* Social Links */}
           <motion.div

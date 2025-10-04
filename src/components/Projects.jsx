@@ -7,9 +7,18 @@ import project2Image from '../assets/project2.png'
 import project3Image from '../assets/project3.png'
 import project4Image from '../assets/project4.png'
 import project5Image from '../assets/project5.png'
+import project6Image from '../assets/project6.png'
 
 const Projects = () => {
   const projects = [
+    {
+      "title": "AI RAG Test Generator",
+      "description": "Developed a web application that lets users upload scanned PDF textbook chapters and automatically generate quizzes, leveraging LangChain, OpenAI, and Qdrant for semantic retrieval and question generation. Hosted on AWS EC2 and enabled quiz downloads as PDFs to streamline studying.",
+      "image": project6Image,
+      "technologies": ["React", "Flask", "LangChain", "OpenAI", "Qdrant", "AWS EC2"],
+      "featured": true,
+      "isPrivate": true
+    },
     {
       title: "Enhancing Image Captioning with Deep Learning Models",
       description: "Collaborated with a team of 2 to develop a deep learning model combining an encoder Wide ResNet50 with a decoder LSTM with an attention layer to accomplish the complex task of image captioning.",
@@ -102,7 +111,7 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="relative w-full h-80 object-cover rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-300"
+                      className="relative w-full h-100 object-cover rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-300"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-2xl flex items-center justify-center">
                       <motion.div
@@ -148,17 +157,6 @@ const Projects = () => {
                     style={{ color: 'var(--text-primary)' }}
                   >
                     {project.title}
-                    {project.isPrivate && (
-                      <motion.span
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="flex items-center gap-1 text-amber-600 dark:text-amber-400 text-sm font-medium bg-amber-100 dark:bg-amber-900 px-2 py-1 rounded-full"
-                        title="Private/Proprietary Project"
-                      >
-                        <FaLock size={12} />
-                        Private
-                      </motion.span>
-                    )}
                   </motion.h3>
 
                   <motion.p
@@ -201,23 +199,14 @@ const Projects = () => {
                   </motion.div>
 
                   {/* Project Links */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                    className="flex space-x-4"
-                  >
-                    {project.isPrivate ? (
-                      <motion.div
-                        {...hoverScale}
-                        className="flex items-center space-x-2 bg-amber-600 dark:bg-amber-700 text-white px-6 py-3 rounded-full cursor-not-allowed opacity-75"
-                        title="Private/Proprietary - Code not available"
-                      >
-                        <FaLock size={18} />
-                        <span>Private</span>
-                      </motion.div>
-                    ) : (
+                  {!project.isPrivate && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.5 }}
+                      className="flex space-x-4"
+                    >
                       <motion.a
                         {...hoverScale}
                         href={project.githubUrl}
@@ -233,8 +222,8 @@ const Projects = () => {
                         <FaGithub size={18} />
                         <span>View Code</span>
                       </motion.a>
-                    )}
-                  </motion.div>
+                    </motion.div>
+                  )}
                 </motion.div>
               </motion.div>
             ))}
