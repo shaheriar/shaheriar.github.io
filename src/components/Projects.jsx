@@ -1,258 +1,102 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { FaGithub, FaExternalLinkAlt, FaLock } from 'react-icons/fa'
-import { staggerContainer, staggerItem, hoverScale } from '../config/animations'
-import project1Image from '../assets/project1.png'
-import project2Image from '../assets/project2.png'
-import project3Image from '../assets/project3.png'
-import project4Image from '../assets/project4.png'
-import project5Image from '../assets/project5.png'
-import project6Image from '../assets/project6.png'
+
+const projects = [
+  {
+    index: '01',
+    title: 'Meal Planning WebApp',
+    description: 'Subscription-based meal planning SaaS built with React and FastAPI, deployed on AWS EC2 with MongoDB. Implemented optimizations to support 50+ concurrent users in production, with REST APIs managing user preferences, recipes, and dynamically generated weekly meal plans. Premium feature gating via Stripe webhooks, AWS Cognito, and Google OAuth.',
+    techLine: 'React · FastAPI · MongoDB · AWS · Google Cloud · Stripe · Aug 2025 – Present',
+  },
+  {
+    index: '02',
+    title: 'Rental Marketplace WebApp',
+    description: 'Founded a peer-to-peer rental marketplace web app using React and Flask, deployed on AWS with MongoDB. Built backend APIs for listings, availability, bookings, and renter-owner workflows, with real-time chat via WebSockets.',
+    techLine: 'React · Flask · AWS · MongoDB · Stripe · WebSockets · Jan 2024 – Present',
+  },
+  {
+    index: '03',
+    title: 'AI RAG Content Generator',
+    description: 'ReactJS + Flask + LangChain webapp to generate contextual LinkedIn posts using RAG and embeddings, with a scalable pipeline to reuse company knowledge in content generation. Integrated Pexels API for images, storing content in MongoDB and AWS S3.',
+    techLine: 'React · Flask · LangChain · OpenAI · MongoDB · AWS · Jun 2025 – Present',
+  },
+  {
+    index: '04',
+    title: 'Enhancing Image Captioning with Deep Learning Models',
+    description: 'Collaborated with a team of 2 to develop a deep learning model combining an encoder (Wide ResNet50) with a decoder LSTM and an attention layer to accomplish image captioning.',
+    techLine: 'Python · PyTorch · Deep Learning · Computer Vision · LSTM · Attention Mechanism',
+    github: 'https://github.com/shaheriar/CS-228-Deep-Learning-Project',
+  },
+  {
+    index: '05',
+    title: 'Motion Planning & Trajectory Generation with Turtlebot3',
+    description: 'Software in ROS to plan a path for the Turtlebot3 using the A* algorithm to avoid obstacles and hit a ball into the goal, and generate a trajectory using a PID controller to follow the path.',
+    techLine: 'ROS · C++ · Python · Robotics · A* Algorithm · PID Controller',
+    github: 'https://github.com/shaheriar/Motion-Planning-Trajectory-Generation-with-Turtlebot3',
+  },
+  {
+    index: '06',
+    title: 'Smart Chessboard',
+    description: 'Led a team of 4 and designed the Flutter front-end and Python AI for a chessboard designed to enhance the playing experience using 192 onboard LEDs and a touch screen.',
+    techLine: 'Flutter · Python · AI · Hardware Integration · LED Control · Touch Interface',
+    github: 'https://github.com/shaheriar/Senior-Design-Project-UCR',
+  },
+]
 
 const Projects = () => {
-  const projects = [
-    {
-      "title": "AI RAG Test Generator",
-      "description": "Developed a web application that lets users upload scanned PDF textbook chapters and automatically generate quizzes, leveraging LangChain, OpenAI, and Qdrant for semantic retrieval and question generation. Hosted on AWS EC2 and enabled quiz downloads as PDFs to streamline studying.",
-      "image": project6Image,
-      "technologies": ["React", "Flask", "LangChain", "OpenAI", "Qdrant", "AWS EC2"],
-      "featured": true,
-      "isPrivate": true
-    },
-    {
-      title: "Enhancing Image Captioning with Deep Learning Models",
-      description: "Collaborated with a team of 2 to develop a deep learning model combining an encoder Wide ResNet50 with a decoder LSTM with an attention layer to accomplish the complex task of image captioning.",
-      image: project1Image,
-      githubUrl: "https://github.com/shaheriar/CS-228-Deep-Learning-Project",
-      technologies: ["Python", "PyTorch", "Deep Learning", "Computer Vision", "LSTM", "Attention Mechanism"],
-      featured: true,
-      isPrivate: false
-    },
-    {
-      title: "Blog Post Automation using RAG, OpenAI, Langchain, with MongoDB",
-      description: "Built an AI-powered blog platform using OpenAI, LangChain, and FAISS embeddings to generate company-specific posts, fetch relevant images from Pexels, and serve them via MongoDB to the website frontend.",
-      image: project4Image,
-      technologies: ["Python", "RAG", "OpenAI", "Langchain", "MongoDB"],
-      featured: true,
-      isPrivate: true
-    },
-    {
-      "title": "Peer-to-Peer Rental Marketplace",
-      "description": "Developed a peer-to-peer rental platform using React, Flask, AWS, and MongoDB, integrated Stripe for secure payments, and built ETL pipelines to track rentals and transactions.",
-      "image": project5Image,
-      "technologies": ["React", "Flask", "AWS", "MongoDB", "Stripe"],
-      "featured": true,
-      "isPrivate": true
-    },
-    {
-      title: "Motion Planning & Trajectory Generation with Turtlebot3",
-      description: "Developed the necessary software in ROS to plan a path for the Turtlebot3 using the A* algorithm to avoid obstacles and hit the ball in the goal, and generate a trajectory using a PID controller to follow the path.",
-      image: project2Image,
-      githubUrl: "https://github.com/shaheriar/Motion-Planning-Trajectory-Generation-with-Turtlebot3",
-      technologies: ["ROS", "C++", "Python", "Robotics", "A* Algorithm", "PID Controller"],
-      featured: true,
-      isPrivate: false
-    },
-    {
-      title: "Smart Chessboard",
-      description: "Led a team of 4 and designed the Flutter front-end and Python AI for the construction of a chessboard designed to enhance the playing experience using the on-board 192 LEDs and touch screen.",
-      image: project3Image,
-      githubUrl: "https://github.com/shaheriar/Senior-Design-Project-UCR",
-      technologies: ["Flutter", "Python", "AI", "Hardware Integration", "LED Control", "Touch Interface"],
-      featured: true,
-      isPrivate: false
-    }
-  ]
-
   return (
-    <section id="projects" className="py-20" style={{ backgroundColor: 'var(--background-darker)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-        >
-          {/* Section Title */}
-          <motion.h2
-            variants={staggerItem}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            Featured Projects
-          </motion.h2>
-
-          <div className="space-y-20">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                variants={staggerItem}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
-              >
-                {/* Project Image */}
-                <motion.div
-                  className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
+    <section id="projects" style={{ padding: '56px clamp(24px,6vw,80px) 0' }}>
+      <p className="font-mono-brand" style={{ fontSize: 12.5, color: 'var(--text-muted)', margin: '0 0 20px' }}>
+        05 · selected work
+      </p>
+      <div>
+        {projects.map((project) => (
+          <div key={project.index} className="grid gap-6" style={{ gridTemplateColumns: '56px 1fr', padding: '22px 0', borderTop: '1px solid var(--border-color)' }}>
+            <span className="font-mono-brand" style={{ fontSize: 13, color: 'var(--text-muted)', paddingTop: 4 }}>
+              {project.index}
+            </span>
+            <div>
+              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 600, color: 'var(--text-primary)', margin: '0 0 10px' }}>
+                {project.title}
+              </h3>
+              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14.5, lineHeight: 1.75, color: 'var(--text-secondary)', margin: '0 0 14px', maxWidth: '70ch' }}>
+                {project.description}
+              </p>
+              <p className="font-mono-brand" style={{ fontSize: 11.5, color: 'var(--text-muted)', margin: '0 0 14px' }}>
+                {project.techLine}
+              </p>
+              {project.github ? (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono-brand no-underline border-b border-transparent hover:!border-b-[#14b8a6]"
+                  style={{ fontSize: 12, color: 'var(--accent)' }}
                 >
-                  <motion.div
-                    whileHover={{ 
-                      rotateY: 5, 
-                      rotateX: 5,
-                      scale: 1.05,
-                      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.4)"
-                    }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="relative group cursor-pointer"
-                  >
-                    <div className="absolute inset-0 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300" style={{ background: 'var(--gradient-secondary)' }}></div>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="relative w-full h-100 object-cover rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-2xl flex items-center justify-center">
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileHover={{ opacity: 1, scale: 1 }}
-                        className="text-white bg-white bg-opacity-20 rounded-full p-3 backdrop-blur-sm"
-                      >
-                        <FaExternalLinkAlt size={24} />
-                      </motion.div>
-                    </div>
-                    {/* Floating particles effect */}
-                    <div className="absolute inset-0 pointer-events-none">
-                      {[...Array(6)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          className="absolute w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-60"
-                          style={{
-                            left: `${20 + (i * 15)}%`,
-                            top: `${30 + (i * 10)}%`,
-                          }}
-                          animate={{
-                            y: [0, -10, 0],
-                            opacity: [0, 0.6, 0],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: i * 0.2,
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </motion.div>
-                </motion.div>
-
-                {/* Project Content */}
-                <motion.div
-                  className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}
-                >
-                  <motion.h3
-                    whileHover={{ scale: 1.02 }}
-                    className="text-2xl md:text-3xl font-bold mb-4 flex items-center gap-3"
-                    style={{ color: 'var(--text-primary)' }}
-                  >
-                    {project.title}
-                  </motion.h3>
-
-                  <motion.p
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="text-lg mb-6 leading-relaxed"
-                    style={{ color: 'var(--text-secondary)' }}
-                  >
-                    {project.description}
-                  </motion.p>
-
-                  {/* Technologies */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="flex flex-wrap gap-2 mb-6"
-                  >
-                    {project.technologies.map((tech, techIndex) => (
-                      <motion.span
-                        key={tech}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 + techIndex * 0.1 }}
-                        whileHover={{ scale: 1.05 }}
-                        className="px-3 py-1 rounded-full text-sm font-medium"
-                        style={{ 
-                          backgroundColor: 'var(--purple-glow)', 
-                          color: 'var(--purple-primary)',
-                          border: '1px solid var(--purple-border)'
-                        }}
-                      >
-                        {tech}
-                      </motion.span>
-                    ))}
-                  </motion.div>
-
-                  {/* Project Links */}
-                  {!project.isPrivate && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5 }}
-                      className="flex space-x-4"
-                    >
-                      <motion.a
-                        {...hoverScale}
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-2 px-6 py-3 rounded-full transition-colors duration-300"
-                        style={{ 
-                          backgroundColor: 'var(--card-bg)', 
-                          color: 'var(--text-primary)',
-                          border: '1px solid var(--card-border)'
-                        }}
-                      >
-                        <FaGithub size={18} />
-                        <span>View Code</span>
-                      </motion.a>
-                    </motion.div>
-                  )}
-                </motion.div>
-              </motion.div>
-            ))}
+                  Code ↗
+                </a>
+              ) : (
+                <span className="font-mono-brand" style={{ fontSize: 12, color: 'var(--text-muted)' }}>
+                  Private codebase
+                </span>
+              )}
+            </div>
           </div>
+        ))}
+      </div>
 
-          {/* Call to Action */}
-          <motion.div
-            variants={staggerItem}
-            className="text-center mt-16"
-          >
-            <motion.p
-              whileHover={{ scale: 1.02 }}
-              className="text-xl mb-6"
-              style={{ color: 'var(--text-secondary)' }}
-            >
-              Interested in seeing more of my work?
-            </motion.p>
-            <motion.a
-              {...hoverScale}
-              href="https://github.com/shaheriar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 btn-primary"
-            >
-              <FaGithub size={20} />
-              <span>Visit My GitHub</span>
-            </motion.a>
-          </motion.div>
-        </motion.div>
+      <div className="text-center" style={{ marginTop: 56 }}>
+        <p className="font-mono-brand" style={{ fontSize: 13, color: 'var(--text-secondary)', margin: '0 0 16px' }}>
+          Interested in seeing more of my work?
+        </p>
+        <a
+          href="https://github.com/shaheriar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono-brand inline-block no-underline hover:!border-white/40"
+          style={{ fontSize: 13, padding: '12px 22px', border: '1px solid var(--border-color-strong)', borderRadius: 8, color: 'var(--text-primary)' }}
+        >
+          VISIT MY GITHUB →
+        </a>
       </div>
     </section>
   )

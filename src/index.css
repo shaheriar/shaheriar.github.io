@@ -1,24 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* MagicBento-inspired color scheme */
 :root {
-  --purple-primary: rgba(132, 0, 255, 1);
-  --purple-glow: rgba(132, 0, 255, 0.2);
-  --purple-border: rgba(132, 0, 255, 0.8);
-  --border-color: #392e4e;
-  --background-dark: #060010;
-  --background-darker: #040008;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --text-muted: #666666;
-  --card-bg: rgba(6, 0, 16, 0.8);
-  --card-border: rgba(57, 46, 78, 0.5);
-  --gradient-primary: linear-gradient(135deg, rgba(132, 0, 255, 0.1) 0%, rgba(132, 0, 255, 0.05) 100%);
-  --gradient-secondary: linear-gradient(135deg, rgba(132, 0, 255, 0.2) 0%, rgba(132, 0, 255, 0.1) 100%);
+  --background-dark: #0d1210;
+  --accent: #14b8a6;
+  --accent-light: #5eead4;
+  --text-primary: #eef4f2;
+  --text-secondary: #a3aca8;
+  --text-muted: #7f8b87;
+  --text-faint: #5c665f;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-strong: rgba(255, 255, 255, 0.18);
 }
 
 @layer base {
@@ -28,119 +23,33 @@
     background-color: var(--background-dark);
     color: var(--text-primary);
   }
-  
+
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
     background-color: var(--background-dark);
     color: var(--text-primary);
   }
-  
+
   * {
     box-sizing: border-box;
   }
 }
 
-@layer components {
-  .btn-primary {
-    background: var(--purple-primary);
-    color: var(--text-primary);
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    font-size: 1.125rem;
-    font-weight: 600;
-    box-shadow: 0 10px 25px var(--purple-glow);
-    transition: all 0.3s ease;
-    border: 1px solid var(--purple-border);
-  }
-  
-  .btn-primary:hover {
-    box-shadow: 0 15px 35px var(--purple-glow);
-    transform: scale(1.05);
-    background: rgba(132, 0, 255, 0.9);
-  }
-  
-  .btn-secondary {
-    background: transparent;
-    border: 2px solid var(--purple-primary);
-    color: var(--purple-primary);
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-secondary:hover {
-    background: var(--purple-primary);
-    color: var(--text-primary);
-    box-shadow: 0 10px 25px var(--purple-glow);
-  }
-  
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    padding: 1.5rem;
-    backdrop-filter: blur(10px);
-  }
-  
-  .card:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px);
-    border-color: var(--purple-border);
-  }
-  
-  .gradient-text {
-    background: linear-gradient(135deg, var(--purple-primary) 0%, rgba(132, 0, 255, 0.7) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-  
-  .glass-effect {
-    background: var(--gradient-primary);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--card-border);
-  }
-}
-
 @layer utilities {
-  .text-shadow {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  .font-mono-brand {
+    font-family: 'JetBrains Mono', monospace;
   }
-  
-  .text-shadow-lg {
-    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  
+
   .prevent-overflow {
     max-width: 100vw;
     overflow-x: hidden;
   }
 }
 
-/* Performance optimizations */
-* {
-  box-sizing: border-box;
-}
-
-/* Optimize animations for better performance */
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* GPU acceleration for smooth animations */
-.card, .skill-icon-item, .particle {
-  will-change: transform;
-  transform: translateZ(0);
+::selection {
+  background: rgba(20, 184, 166, 0.3);
+  color: #fff;
 }
